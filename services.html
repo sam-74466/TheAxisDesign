@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Futuristic Interior Design</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1000;
+    }
+    nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: 500; transition: color 0.3s; }
+    nav a:hover { color: #0ff; text-shadow: 0 0 8px #0ff; }
+
+    .hero {
+      height: 50vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #0ff, #f0f, #ff0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 4s infinite alternate;
+    }
+
+    /* Service Cards Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      transition: transform 0.5s, box-shadow 0.5s;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ff, 0 0 40px #f0f, 0 0 60px #ff0;
+    }
+    .service-card h3 {
+      color: #0ff;
+      margin-bottom: 1rem;
+    }
+    .service-card p { color: #ccc; font-size: 0.95rem; }
+
+    
+    /* Cursor */
+    .cursor {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(0, 255, 255, 0.7);
+      position: fixed;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      z-index: 9999;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #0ff; }
+      to { text-shadow: 0 0 25px #f0f, 0 0 50px #ff0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><a href="index.html">✨ InteriorX</a></div>
+    <div class="links">
+      <a href="Index.html">Home</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Our Services</h1>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-grid">
+    <div class="service-card">
+      <h3>Custom Modifications. </h3>
+      <p>Choose colors, textures, and patterns that match your lifestyle.</p>
+    </div>
+    <div class="service-card">
+      <h3>Tile Replacement & Renovation. </h3>
+      <p> Refresh old or damaged tiles with sleek new designs.</p>
+    </div>
+    <div class="service-card">
+      <h3>Kitchen Tile Styling.</h3>
+      <p> Create a stylish cooking space with easy-to-clean, premium tiles.</p>
+    </div>
+    <div class="service-card">
+      <h3>Bathroom Elegance </h3>
+      <p> Add luxury and comfort with water-resistant, beautifully crafted tiles.</p>
+    </div>
+  </section>
+
+ 
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Particles
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#0ff" },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "color": "#0ff" },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+
+    // Cursor
+    const cursor = document.getElementById("cursor");
+    document.addEventListener("mousemove", e => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    });
+
+   
+  </script>
+</body>
+</html>
