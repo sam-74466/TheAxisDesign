@@ -1,161 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Home Inspection Pune | Flat Inspection Before Buying | AxisDesigns</title>
+
+<meta name="description" content="AxisDesigns provides professional home inspection in Pune including moisture detection, plumbing inspection, electrical inspection, tile hollow detection and thermal scanning.">
+
+<meta name="keywords" content="home inspection Pune, flat inspection before buying Pune, property inspection Pune, apartment inspection Pune">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 <style>
-*{
-  box-sizing:border-box;
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
 
 body{
-  margin:0;
-  background:#000;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
+background:black;
+color:white;
+overflow-x:hidden;
+font-family:sans-serif;
 }
 
-.wrapper{
-  width:100%;
-  max-width:360px;
+#bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
-.card{
-  border:1px solid #262626;
-  padding:30px 25px;
-  text-align:center;
+header{
+backdrop-filter:blur(10px);
 }
 
-.logo{
-  font-family:cursive;
-  font-size:36px;
-  margin-bottom:30px;
+nav a{
+transition:0.3s;
 }
 
-input{
-  width:100%;
-  padding:12px 10px;
-  margin-bottom:10px;
-  background:#000;
-  border:1px solid #262626;
-  color:#fff;
-  border-radius:4px;
+nav a:hover{
+color:#9ca3af;
 }
 
-input::placeholder{
-  color:#8e8e8e;
-}
-
-button{
-  width:100%;
-  padding:10px;
-  background:#0095f6;
-  border:none;
-  border-radius:8px;
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
-}
-
-button:disabled{
-  background:#1a3c57;
-}
-
-.or{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin:20px 0;
-  color:#8e8e8e;
-  font-size:13px;
-}
-
-.or::before,
-.or::after{
-  content:"";
-  flex:1;
-  height:1px;
-  background:#262626;
-}
-
-.fb{
-  color:#0095f6;
-  font-size:14px;
-  margin-bottom:15px;
-}
-
-.forgot{
-  font-size:12px;
-  color:#e0f1ff;
-}
-
-.signup{
-  margin-top:15px;
-  border:1px solid #262626;
-  padding:15px;
-  text-align:center;
-  font-size:14px;
-}
-
-.signup span{
-  color:#0095f6;
-}
-
-.getapp{
-  text-align:center;
-  margin-top:20px;
-  font-size:14px;
-}
-
-.stores{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:10px;
-}
-
-.stores img{
-  height:40px;
-}
 </style>
+
 </head>
 
 <body>
-<div class="wrapper">
 
-  <div class="card">
-    <div class="logo">Instagram</div>
+<canvas id="bg"></canvas>
 
-    <form action="login.php" method="POST">
-      <input type="text" name="username" placeholder="Phone number, username, or email" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Log in</button>
-    </form>
+<!-- NAVBAR -->
 
-    <div class="or">OR</div>
+<header class="fixed top-0 w-full bg-black/40 z-50">
 
-    <div class="fb">Log in with Facebook</div>
-    <div class="forgot">Forgot password?</div>
-  </div>
+<div class="max-w-7xl mx-auto flex justify-between items-center p-6">
 
-  <div class="signup">
-    Don't have an account? <span>Sign up</span>
-  </div>
+<div class="text-xl font-bold">
+AxisDesigns
+</div>
 
-  <div class="getapp">
-    Get the app.
-    <div class="stores">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Microsoft_Store_badge.svg">
-    </div>
-  </div>
+<nav class="space-x-6 text-sm">
+
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#checklist">Check List</a>
+<a href="#blogs">Blogs</a>
+<a href="#ratings">Ratings</a>
+<a href="#contact">Contact</a>
+
+</nav>
 
 </div>
+
+</header>
+
+
+<!-- HOME -->
+
+<section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
+
+<div class="max-w-3xl">
+
+<h1 class="text-6xl font-bold mb-6">
+Professional Home Inspection
+</h1>
+
+<p class="text-gray-400 text-lg mb-10">
+Detect hidden defects in flats before buying. AxisDesigns provides professional apartment inspection in Pune.
+</p>
+
+<a href="#contact">
+<button class="bg-white text-black px-8 py-3 rounded-lg">
+Book Inspection
+</button>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery" class="py-32">
+
+<h2 class="text-center text-4xl font-bold mb-16">
+Inspection Gallery
+</h2>
+
+<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-6">
+
+<img src="images/thermalscanner.png" class="rounded-lg">
+
+<img src="images/tilecheckup.png" class="rounded-lg">
+
+<img src="images/structural.png" class="rounded-lg">
+
+<img src="images/plumbing.png" class="rounded-lg">
+
+<img src="images/sefty.png" class="rounded-lg">
+
+<img src="images/electrical.png" class="rounded-lg">
+
+</div>
+</div>
+
+</section>
+
+
+<!-- CHECKLIST -->
+
+<section id="checklist" class="py-32">
+
+<h2 class="text-center text-4xl font-bold mb-20">
+60+ Point Home Inspection Checklist
+</h2>
+
+<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+<!-- Structural -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+<h3 class="text-2xl mb-4">Structural Inspection</h3>
+<ul class="text-gray-400 space-y-2 text-sm">
+<li>Major wall cracks</li>
+<li>Column cracks</li>
+<li>Beam cracks</li>
+<li>Slab damage</li>
+<li>Floor slope level</li>
+<li>Ceiling cracks</li>
+<li>Balcony slab condition</li>
+<li>Structural settlement signs</li>
+<li>Plaster hollow areas</li>
+<li>Load bearing wall condition</li>
+</ul>
+</div>
+
+<!-- Waterproofing -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+<h3 class="text-2xl mb-4">Waterproofing & Leakage</h3>
+<ul class="text-gray-400 space-y-2 text-sm">
+<li>Terrace waterproofing condition</li>
+<li>Bathroom leakage signs</li>
+<li>Kitchen sink leakage</li>
+<li>Damp wall detection</li>
+<li>Window water seepage</li>
+<li>Balcony waterproofing</li>
+<li>Pipe leakage</li>
+<li>Ceiling damp patches</li>
+<li>Plumbing joints leakage</li>
+<li>External wall seepage</li>
+</ul>
+</div>
+
+<!-- Plumbing -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+<h3 class="text-2xl mb-4">Plumbing System</h3>
+<ul class="text-gray-400 space-y-2 text-sm">
+<li>Water pressure check</li>
+<li>Pipe leakage check</li>
+<li>Drainage slope</li>
+<li>Bathroom drain flow</li>
+<li>Kitchen drainage</li>
+<li>Toilet flush system</li>
+<li>Pipe corrosion signs</li>
+<li>Water tank connection</li>
+<li>Tap fittings condition</li>
+<li>Sewer smell detection</li>
+</ul>
+</div>
+
+<!-- Electrical -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+<h3 class="text-2xl mb-4">Electrical System</h3>
+<ul class="text-gray-400 space-y-2 text-sm">
+<li>Main electrical panel</li>
+<li>Circuit breaker condition</li>
+<li>Earthing check</li>
+<li>Switchboard condition</li>
+<li>Socket safety</li>
+<li>Wiring exposure</li>
+<li>Voltage testing</li>
+<li>Lighting fixtures condition</li>
+<li>AC power point wiring</li>
+<li>Electrical load safety</li>
+</ul>
+</div>
+
+<!-- Interior -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+<h3 class="text-2xl mb-4">Interior Finishing</h3>
+<ul class="text-gray-400 space-y-2 text-sm">
+<li>Tile hollow sound</li>
+<li>Tile alignment</li>
+<li>Door alignment</li>
+<li>Window sealing</li>
+<li>Paint quality</li>
+<li>Wall finishing</li>
+<li>Skirting finishing</li>
+<li>False ceiling condition</li>
+<li>Cabinet installation quality</li>
+<li>Floor finishing defects</li>
+</ul>
+</div>
+
+<!-- Safety -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+<h3 class="text-2xl mb-4">Safety & Utility</h3>
+<ul class="text-gray-400 space-y-2 text-sm">
+<li>Balcony railing safety</li>
+<li>Fire safety provision</li>
+<li>Ventilation check</li>
+<li>Natural lighting</li>
+<li>Gas pipeline safety</li>
+<li>Lift access safety</li>
+<li>Staircase condition</li>
+<li>Water supply availability</li>
+<li>Parking area condition</li>
+<li>Overall property risk rating</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BLOGS -->
+
+<section id="blogs" class="py-32">
+
+<h2 class="text-center text-4xl font-bold mb-20">
+Home Inspection Blog
+</h2>
+
+<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+<!-- Blog 1 -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+
+<h3 class="text-2xl mb-4">
+Flat Inspection Before Buying
+</h3>
+
+<p class="text-gray-400 mb-6">
+Buying a flat without proper inspection can hide defects like water leakage,
+structural cracks and plumbing problems. A professional inspection helps
+detect these issues before purchase.
+</p>
+
+<a href="#" class="text-sm text-gray-500">
+Read More →
+</a>
+
+</div>
+
+<!-- Blog 2 -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+
+<h3 class="text-2xl mb-4">
+Hidden Defects In New Apartments
+</h3>
+
+<p class="text-gray-400 mb-6">
+Many newly constructed flats have hidden issues like damp walls,
+tile hollowness and electrical faults that are difficult to see during
+normal property visits.
+</p>
+
+<a href="#" class="text-sm text-gray-500">
+Read More →
+</a>
+
+</div>
+
+<!-- Blog 3 -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+
+<h3 class="text-2xl mb-4">
+Moisture Problems In Flats
+</h3>
+
+<p class="text-gray-400 mb-6">
+Moisture problems can damage paint, plaster and electrical systems.
+Using a moisture meter helps identify hidden dampness behind walls.
+</p>
+
+<a href="#" class="text-sm text-gray-500">
+Read More →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RATINGS -->
+
+<section id="ratings" class="py-32">
+
+<h2 class="text-center text-4xl font-bold mb-20">
+Client Ratings & Reviews
+</h2>
+
+<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+<!-- Review 1 -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+
+<p class="text-gray-400 mb-6">
+AxisDesigns detected hidden leakage behind the bathroom wall before
+we purchased the flat. This saved us from costly repairs.
+</p>
+
+<div class="font-semibold">
+Rahul Sharma
+</div>
+
+<div class="text-sm text-gray-500">
+Wakad, Pune
+</div>
+
+<div class="mt-3 text-yellow-400">
+★★★★★
+</div>
+
+</div>
+
+
+<!-- Review 2 -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+
+<p class="text-gray-400 mb-6">
+Very detailed inspection. They checked plumbing pressure, hollow tiles
+and electrical safety in our apartment.
+</p>
+
+<div class="font-semibold">
+Sneha Patil
+</div>
+
+<div class="text-sm text-gray-500">
+Baner, Pune
+</div>
+
+<div class="mt-3 text-yellow-400">
+★★★★★
+</div>
+
+</div>
+
+
+<!-- Review 3 -->
+
+<div class="border border-gray-800 p-8 rounded-xl">
+
+<p class="text-gray-400 mb-6">
+The inspection report was very professional and helped us negotiate
+repairs with the builder.
+</p>
+
+<div class="font-semibold">
+Amit Kulkarni
+</div>
+
+<div class="text-sm text-gray-500">
+Hinjewadi, Pune
+</div>
+
+<div class="mt-3 text-yellow-400">
+★★★★★
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="py-32">
+
+<h2 class="text-center text-4xl font-bold mb-16">
+Contact AxisDesigns
+</h2>
+
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6">
+
+<!-- Contact Info -->
+
+<div class="space-y-6">
+
+<h3 class="text-2xl font-semibold">Book Home Inspection</h3>
+
+<p class="text-gray-400">
+Schedule a professional home inspection before buying a flat or apartment in Pune. 
+Our inspection detects hidden defects like leakage, structural cracks, plumbing problems and electrical issues.
+</p>
+
+<div class="space-y-3 text-gray-300">
+
+<p>📞 Phone: +91 8605810586</p>
+<p>📧 Email: theaxisdesigns01@email.com</p>
+<p>📍 Location: Pune, Maharashtra</p>
+
+</div>
+
+<div class="flex gap-4 mt-6">
+
+<a href="tel:+918605810586" class="bg-white text-black px-6 py-3 rounded-lg">
+Call Now
+</a>
+
+<a href="https://wa.me/918605810586" target="_blank" class="border border-gray-700 px-6 py-3 rounded-lg">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<!-- Contact Form -->
+
+<form action="https://formsubmit.co/your-email@gmail.com" method="POST" class="space-y-5">
+
+<input 
+type="text" 
+name="name"
+placeholder="Full Name"
+class="w-full p-3 rounded bg-gray-900 border border-gray-700"
+required
+>
+
+<input 
+type="tel" 
+name="mobile"
+placeholder="Mobile Number"
+class="w-full p-3 rounded bg-gray-900 border border-gray-700"
+required
+>
+
+<input 
+type="text" 
+name="location"
+placeholder="Location / Area"
+class="w-full p-3 rounded bg-gray-900 border border-gray-700"
+required
+>
+
+<textarea 
+name="message"
+placeholder="Message"
+rows="4"
+class="w-full p-3 rounded bg-gray-900 border border-gray-700"
+required
+></textarea>
+
+<!-- Hidden settings -->
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="New Home Inspection Request">
+
+<input type="hidden" name="_template" value="table">
+
+<button 
+type="submit"
+class="bg-white text-black px-6 py-3 rounded-lg w-full">
+Send Inspection Request
+</button>
+
+</form>
+
+</div>
+
+</section>
+<!-- LIBRARIES -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+<script>
+
+/* THREE JS DONUT BACKGROUND */
+
+const scene = new THREE.Scene()
+
+const camera = new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+)
+
+const renderer = new THREE.WebGLRenderer({
+canvas:document.querySelector('#bg'),
+alpha:true
+})
+
+renderer.setSize(window.innerWidth,window.innerHeight)
+
+camera.position.z = 30
+
+const geometry = new THREE.TorusGeometry(10,3,16,100)
+
+const material = new THREE.MeshStandardMaterial({
+color:0xffffff,
+wireframe:true
+})
+
+const torus = new THREE.Mesh(geometry,material)
+
+scene.add(torus)
+
+const light = new THREE.PointLight(0xffffff)
+
+light.position.set(20,20,20)
+
+scene.add(light)
+
+function animate(){
+
+requestAnimationFrame(animate)
+
+torus.rotation.x += 0.01
+torus.rotation.y += 0.01
+
+renderer.render(scene,camera)
+
+}
+
+animate()
+
+
+/* SWIPER */
+
+new Swiper(".mySwiper",{
+
+loop:true,
+autoplay:{delay:3000}
+
+})
+
+</script>
+
 </body>
 </html>
