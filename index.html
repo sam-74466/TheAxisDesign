@@ -1,589 +1,1633 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Home Inspection Pune | Flat Inspection Before Buying | AxisDesigns</title>
-
-<meta name="description" content="AxisDesigns provides professional home inspection in Pune including moisture detection, plumbing inspection, electrical inspection, tile hollow detection and thermal scanning.">
-
-<meta name="keywords" content="home inspection Pune, flat inspection before buying Pune, property inspection Pune, apartment inspection Pune">
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
+<title>The Axis Design – Ladies & Kids Tailor | Nanded City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body{
-background:black;
-color:white;
-overflow-x:hidden;
-font-family:sans-serif;
-}
+  :root {
+    --gold: #C9952A;
+    --gold-light: #E8C068;
+    --gold-pale: #FDF5E6;
+    --deep: #1A0E2E;
+    --deep2: #2C1A4A;
+    --rose: #B5536A;
+    --rose-light: #E8899A;
+    --cream: #FBF6EF;
+    --text: #2C1A4A;
+    --text-muted: #7A6B8A;
+    --white: #FFFFFF;
+    --card-bg: rgba(255,255,255,0.07);
+  }
 
-#bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-}
+  html { scroll-behavior: smooth; }
 
-header{
-backdrop-filter:blur(10px);
-}
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
 
-nav a{
-transition:0.3s;
-}
+  /* CURSOR */
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    width: 34px; height: 34px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.35s ease, width 0.3s, height 0.3s, opacity 0.3s;
+    opacity: 0.7;
+  }
 
-nav a:hover{
-color:#9ca3af;
-}
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(26, 14, 46, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201,149,42,0.2);
+    transition: padding 0.3s;
+  }
+  nav.scrolled { padding: 12px 5vw; }
 
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+  .logo span { color: var(--rose-light); font-style: italic; }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1.5px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--rose));
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 50px;
+    transition: opacity 0.2s, transform 0.2s !important;
+  }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+  .nav-cta::after { display: none !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1A0E2E 0%, #2C1A4A 50%, #3D1A35 100%);
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-fabric {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 900px 600px at 80% 50%, rgba(201,149,42,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 500px 800px at 15% 80%, rgba(181,83,106,0.15) 0%, transparent 60%);
+  }
+
+  /* animated threads */
+  .thread {
+    position: absolute;
+    width: 1.5px;
+    background: linear-gradient(180deg, transparent, rgba(201,149,42,0.5), transparent);
+    animation: threadFlow linear infinite;
+    transform-origin: top center;
+  }
+
+  @keyframes threadFlow {
+    0% { transform: scaleY(0) translateY(-100%); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: scaleY(1) translateY(0); opacity: 0; }
+  }
+
+  /* floating circles decoration */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    animation: float ease-in-out infinite;
+  }
+  .orb-1 {
+    width: 500px; height: 500px;
+    right: -100px; top: -100px;
+    background: radial-gradient(circle, rgba(201,149,42,0.18) 0%, transparent 70%);
+    animation-duration: 8s;
+  }
+  .orb-2 {
+    width: 300px; height: 300px;
+    left: 10%; bottom: 10%;
+    background: radial-gradient(circle, rgba(181,83,106,0.2) 0%, transparent 70%);
+    animation-duration: 6s; animation-delay: -2s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+
+  /* needle & thread SVG animation */
+  .hero-deco {
+    position: absolute;
+    right: 8vw; top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.12;
+    width: 360px;
+    animation: decoSpin 30s linear infinite;
+  }
+  @keyframes decoSpin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 5vw;
+    max-width: 720px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,149,42,0.15);
+    border: 1px solid rgba(201,149,42,0.35);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.8rem;
+    animation: fadeDown 0.8s ease both;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+    animation: fadeDown 0.8s 0.2s ease both;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeDown 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), #D4821A);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 30px rgba(201,149,42,0.35);
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.15);
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,149,42,0.5); }
+  .btn-primary:hover::before { transform: translateX(100%); }
+
+  .btn-ghost {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold-light);
+    background: rgba(201,149,42,0.1);
+  }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem;
+    margin-top: 3.5rem;
+    animation: fadeDown 0.8s 0.4s ease both;
+  }
+  .stat-item { color: white; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center;
+    gap: 8px;
+    animation: fadeDown 1s 1s ease both;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(180deg, rgba(201,149,42,0.8), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.4); opacity: 0.4; }
+  }
+  .scroll-text {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 5vw; }
+  .section-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 30px; height: 1.5px;
+    background: var(--gold);
+    display: inline-block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--deep);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 520px;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--deep), var(--deep2));
+    border-radius: 4px 60px 4px 60px;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-img-inner {
+    width: 90%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(201,149,42,0.3), rgba(181,83,106,0.2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8rem;
+    animation: float 6s ease-in-out infinite;
+  }
+  .about-tag {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, var(--gold), var(--rose));
+    color: white;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  .about-tag strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    display: block;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .feature-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(201,149,42,0.15);
+    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 500;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feature-chip:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .feature-chip .chip-icon {
+    width: 32px; height: 32px;
+    background: var(--gold-pale);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* SERVICES */
+  #services {
+    background: linear-gradient(170deg, #1A0E2E 0%, #2C1A4A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  #services::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,149,42,0.08) 0%, transparent 70%);
+    right: -200px; top: -200px;
+    pointer-events: none;
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .services-header .section-title { color: white; }
+  .services-header .section-tag { color: var(--gold-light); }
+  .services-header .section-tag::before { background: var(--gold-light); }
+
+  .service-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .tab-btn {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(201,149,42,0.3);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: linear-gradient(135deg, var(--gold), var(--rose));
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 20px rgba(201,149,42,0.4);
+  }
+
+  .service-panel { display: none; }
+  .service-panel.active { display: block; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 18px 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: all 0.3s;
+    animation: cardIn 0.4s ease both;
+  }
+  .service-card:hover {
+    background: rgba(201,149,42,0.12);
+    border-color: rgba(201,149,42,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, rgba(201,149,42,0.15), transparent);
+    border-radius: 50%;
+    transition: transform 0.4s;
+  }
+  .service-card:hover::before { transform: scale(2); }
+
+  .service-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+  .service-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+  }
+  .service-badge {
+    position: absolute;
+    top: 10px; right: 10px;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: rgba(201,149,42,0.25);
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SPECIALTIES highlight */
+  .specialty-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .specialty-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(201,149,42,0.12);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .specialty-card::before {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(201,149,42,0.1), transparent);
+    border-radius: 50%;
+  }
+  .specialty-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+  .specialty-icon {
+    width: 64px; height: 64px;
+    background: linear-gradient(135deg, var(--gold-pale), #fff);
+    border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.2rem;
+    border: 1px solid rgba(201,149,42,0.2);
+  }
+  .specialty-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 0.6rem;
+  }
+  .specialty-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .specialty-count {
+    margin-top: 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* WHY US */
+  #why {
+    background: var(--cream);
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .why-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .why-icon-wrap {
+    width: 70px; height: 70px;
+    background: linear-gradient(135deg, var(--gold-pale), white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.2rem;
+    border: 2px solid rgba(201,149,42,0.2);
+    transition: transform 0.3s;
+  }
+  .why-card:hover .why-icon-wrap { transform: rotate(10deg) scale(1.1); }
+  .why-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 0.5rem;
+  }
+  .why-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* PROCESS */
+  #process {
+    background: linear-gradient(135deg, #2C1A4A 0%, #3D1A35 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  #process .section-title { color: white; }
+  #process .section-tag { color: var(--gold-light); }
+  #process .section-tag::before { background: var(--gold-light); }
+  #process .section-desc { color: rgba(255,255,255,0.55); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 40px; left: 10%;
+    width: 80%;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(201,149,42,0.4), rgba(201,149,42,0.4), transparent);
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+  }
+  .step-num {
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, var(--gold), var(--rose));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 30px rgba(201,149,42,0.4);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s;
+  }
+  .step:hover .step-num { transform: scale(1.1); }
+  .step-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  .step-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    background: var(--cream);
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testi-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(201,149,42,0.12);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .testi-card:hover { transform: translateY(-4px); }
+  .testi-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: rgba(201,149,42,0.12);
+    position: absolute;
+    top: -10px; left: 20px;
+    line-height: 1;
+  }
+  .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
+  .testi-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testi-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--rose));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+  }
+  .testi-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--deep);
+  }
+  .testi-loc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  /* CONTACT */
+  #contact {
+    background: linear-gradient(135deg, #1A0E2E 0%, #2C1A4A 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  #contact .section-title { color: white; }
+  #contact .section-tag { color: var(--gold-light); }
+  #contact .section-tag::before { background: var(--gold-light); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .contact-info { }
+  .contact-info p {
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 1.5rem;
+  }
+  .contact-item-icon {
+    width: 44px; height: 44px;
+    background: rgba(201,149,42,0.15);
+    border: 1px solid rgba(201,149,42,0.3);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-item-text h4 {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 3px;
+  }
+  .contact-item-text p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .contact-form {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-group select option { background: #2C1A4A; color: white; }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: rgba(201,149,42,0.5);
+    background: rgba(255,255,255,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold), var(--rose));
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 8px 30px rgba(201,149,42,0.3);
+  }
+  .form-submit:hover { opacity: 0.92; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: #0D0817;
+    padding: 3rem 5vw 1.5rem;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+  .footer-logo span { color: var(--rose-light); font-style: italic; }
+  .footer-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.35);
+  }
+  .footer-links {
+    display: flex; gap: 2rem; justify-content: center;
+    margin-bottom: 2rem; flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 1.5rem;
+  }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* ANIMATIONS for scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* floating WhatsApp */
+  .wa-float {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    z-index: 50;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: waBounce 3s ease-in-out infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(37,211,102,0.55);
+  }
+  @keyframes waBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+  .wa-icon { font-size: 1.6rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    #about { grid-template-columns: 1fr; gap: 2.5rem; }
+    .specialty-row { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .process-steps::before { display: none; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    .process-steps { grid-template-columns: 1fr; }
+    h1 { font-size: 2.5rem; }
+    section { padding: 4rem 5vw; }
+  }
 </style>
-
 </head>
-
 <body>
 
-<canvas id="bg"></canvas>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
 
-<!-- NAVBAR -->
-
-<header class="fixed top-0 w-full bg-black/40 z-50">
-
-<div class="max-w-7xl mx-auto flex justify-between items-center p-6">
-
-<div class="text-xl font-bold">
-AxisDesigns
-</div>
-
-<nav class="space-x-6 text-sm">
-
-<a href="#home">Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#checklist">Check List</a>
-<a href="#blogs">Blogs</a>
-<a href="#ratings">Ratings</a>
-<a href="#contact">Contact</a>
-
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="logo">TheAxis<span>Designs</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
 </nav>
 
-</div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-fabric"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
 
-</header>
+  <!-- animated threads -->
+  <div class="thread" style="left:15%;height:300px;animation-duration:5s;animation-delay:0s;"></div>
+  <div class="thread" style="left:30%;height:200px;animation-duration:7s;animation-delay:1s;"></div>
+  <div class="thread" style="left:65%;height:400px;animation-duration:6s;animation-delay:2s;"></div>
+  <div class="thread" style="left:80%;height:250px;animation-duration:8s;animation-delay:0.5s;"></div>
+  <div class="thread" style="left:48%;height:350px;animation-duration:5.5s;animation-delay:3s;"></div>
 
+  <!-- hero deco -->
+  <svg class="hero-deco" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="180" stroke="rgba(201,149,42,0.6)" stroke-width="1" stroke-dasharray="8 4"/>
+    <circle cx="200" cy="200" r="130" stroke="rgba(181,83,106,0.5)" stroke-width="1" stroke-dasharray="4 8"/>
+    <circle cx="200" cy="200" r="80" stroke="rgba(201,149,42,0.4)" stroke-width="1"/>
+    <line x1="20" y1="200" x2="380" y2="200" stroke="rgba(201,149,42,0.3)" stroke-width="1" stroke-dasharray="6 4"/>
+    <line x1="200" y1="20" x2="200" y2="380" stroke="rgba(201,149,42,0.3)" stroke-width="1" stroke-dasharray="6 4"/>
+    <circle cx="200" cy="200" r="6" fill="rgba(201,149,42,0.6)"/>
+    <path d="M200 20 L380 200 L200 380 L20 200 Z" stroke="rgba(181,83,106,0.3)" stroke-width="1" fill="none"/>
+  </svg>
 
-<!-- HOME -->
+  <div class="hero-content">
+    <div class="hero-badge">✦ Premium Ladies & Kids Tailor</div>
+    <h1>
+      Crafted with<br>
+      <em>Love & Precision</em>
+    </h1>
+    <p class="hero-sub">
+      Nanded City's most trusted boutique tailor for sarees, blouses, ethnic wear &amp; kids' fashion. 
+      80+ specialist services with expert craftsmanship tailored just for you.
+    </p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services ✦</a>
+      <a href="#contact" class="btn-ghost">Book Appointment</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">80+</span>
+        <span class="stat-label">Services</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Years Expert</span>
+      </div>
+    </div>
+  </div>
 
-<section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
-
-<div class="max-w-3xl">
-
-<h1 class="text-6xl font-bold mb-6">
-Professional Home Inspection
-</h1>
-
-<p class="text-gray-400 text-lg mb-10">
-Detect hidden defects in flats before buying. AxisDesigns provides professional apartment inspection in Pune.
-</p>
-
-<a href="#contact">
-<button class="bg-white text-black px-8 py-3 rounded-lg">
-Book Inspection
-</button>
-</a>
-
-</div>
-
+  <div class="scroll-indicator">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
 </section>
 
-
-<!-- GALLERY -->
-
-<section id="gallery" class="py-32">
-
-<h2 class="text-center text-4xl font-bold mb-16">
-Inspection Gallery
-</h2>
-
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-6">
-
-<img src="images/electrical.png" class="rounded-lg">
-
-<img src="images/plumbing.jpeg" class="rounded-lg">
-
-<img src="images/sefty.jpeg" class="rounded-lg">
-
-<img src="images/structural.png" class="rounded-lg">
-
-<img src="images/thermalscanner .png" class="rounded-lg">
-
-<img src="images/tilecheckup.jpeg" class="rounded-lg">
-
-</div>
-</div>
-
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual reveal">
+    <div class="about-img-frame">
+      <div class="about-img-inner">🪡</div>
+    </div>
+    <div class="about-tag">
+      <strong>✦</strong>
+      Nanded City's<br>Favourite Boutique
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-tag reveal">Our Story</div>
+    <h2 class="section-title reveal reveal-delay-1">Where Tradition<br>Meets <em>Elegance</em></h2>
+    <p class="section-desc reveal reveal-delay-2" style="margin-bottom:1.5rem;">
+      The Axis Design is Nanded City's premier ladies and kids tailor, blending timeless Indian craftsmanship 
+      with modern fashion sensibilities. From intricate bridal blouses to everyday kurtis, every stitch 
+      is a promise of perfection.
+    </p>
+    <p class="section-desc reveal reveal-delay-2">
+      Located in the heart of Nanded City, we offer 80+ specialized services — from saree pico to 
+      celebrity-style custom designs, all with personal attention and on-time delivery.
+    </p>
+    <div class="about-features reveal reveal-delay-3">
+      <div class="feature-chip"><div class="chip-icon">⏱</div>On-Time Delivery</div>
+      <div class="feature-chip"><div class="chip-icon">🏠</div>Home Pickup & Drop</div>
+      <div class="feature-chip"><div class="chip-icon">👑</div>Premium Quality</div>
+      <div class="feature-chip"><div class="chip-icon">📐</div>Custom Fitting</div>
+      <div class="feature-chip"><div class="chip-icon">⚡</div>Urgent Orders</div>
+      <div class="feature-chip"><div class="chip-icon">🌹</div>Bridal Specialist</div>
+    </div>
+  </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Our <em>Services</em></h2>
+    </div>
+    <p style="color:rgba(255,255,255,0.45);font-size:0.9rem;max-width:260px;text-align:right;">
+      Click a category to explore our 80+ specialist services
+    </p>
+  </div>
 
-<!-- CHECKLIST -->
+  <div class="service-tabs">
+    <button class="tab-btn active" onclick="showTab('saree')">🥻 Saree</button>
+    <button class="tab-btn" onclick="showTab('blouse')">👗 Blouse</button>
+    <button class="tab-btn" onclick="showTab('neck')">💎 Necklines</button>
+    <button class="tab-btn" onclick="showTab('sleeve')">💫 Sleeves</button>
+    <button class="tab-btn" onclick="showTab('suits')">✨ Suits & Dresses</button>
+    <button class="tab-btn" onclick="showTab('kids')">🎀 Kids Wear</button>
+    <button class="tab-btn" onclick="showTab('bridal')">💍 Bridal</button>
+    <button class="tab-btn" onclick="showTab('embroidery')">🌸 Embellishments</button>
+    <button class="tab-btn" onclick="showTab('alterations')">🔧 Alterations</button>
+    <button class="tab-btn" onclick="showTab('special')">⚡ Special Services</button>
+  </div>
 
-<section id="checklist" class="py-32">
+  <!-- SAREE -->
+  <div class="service-panel active" id="panel-saree">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🥻</span><span class="service-name">Saree Pico</span><span class="service-badge">Popular</span></div>
+      <div class="service-card"><span class="service-icon">🧵</span><span class="service-name">Saree Fall Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🔄</span><span class="service-name">Saree Rolling</span></div>
+      <div class="service-card"><span class="service-icon">✨</span><span class="service-name">Saree Tassel Work</span></div>
+      <div class="service-card"><span class="service-icon">🛠</span><span class="service-name">Saree Repair</span></div>
+    </div>
+  </div>
 
-<h2 class="text-center text-4xl font-bold mb-20">
-60+ Point Home Inspection Checklist
-</h2>
+  <!-- BLOUSE -->
+  <div class="service-panel" id="panel-blouse">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">👗</span><span class="service-name">Simple Blouse Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🎨</span><span class="service-name">Designer Blouse Stitching</span><span class="service-badge">Bestseller</span></div>
+      <div class="service-card"><span class="service-icon">💍</span><span class="service-name">Bridal Blouse Stitching</span><span class="service-badge">Premium</span></div>
+      <div class="service-card"><span class="service-icon">🔝</span><span class="service-name">Padded Blouse</span></div>
+      <div class="service-card"><span class="service-icon">👑</span><span class="service-name">Princess Cut Blouse</span></div>
+      <div class="service-card"><span class="service-icon">💃</span><span class="service-name">Fashion Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🌹</span><span class="service-name">Backless Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🪡</span><span class="service-name">Maggam Work Blouse</span><span class="service-badge">Specialty</span></div>
+    </div>
+  </div>
 
-<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+  <!-- NECK -->
+  <div class="service-panel" id="panel-neck">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">⛵</span><span class="service-name">Boat Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">⭕</span><span class="service-name">Round Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🆙</span><span class="service-name">U Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">✌️</span><span class="service-name">V Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">💕</span><span class="service-name">Sweetheart Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">💎</span><span class="service-name">Diamond Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🔑</span><span class="service-name">Keyhole Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">✂️</span><span class="service-name">Cross Tie-Up Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🎗</span><span class="service-name">Halter Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">💪</span><span class="service-name">One Shoulder Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🔵</span><span class="service-name">Collar Neck Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🏺</span><span class="service-name">Mandarin Collar Blouse</span></div>
+      <div class="service-card"><span class="service-icon">🌟</span><span class="service-name">Strapless Blouse</span></div>
+    </div>
+  </div>
 
-<!-- Structural -->
+  <!-- SLEEVE -->
+  <div class="service-panel" id="panel-sleeve">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🎨</span><span class="service-name">Sleeve Designing</span></div>
+      <div class="service-card"><span class="service-icon">🫧</span><span class="service-name">Puff Sleeve</span><span class="service-badge">Trending</span></div>
+      <div class="service-card"><span class="service-icon">🔔</span><span class="service-name">Bell Sleeve</span></div>
+      <div class="service-card"><span class="service-icon">❄️</span><span class="service-name">Cold Shoulder Sleeve</span></div>
+      <div class="service-card"><span class="service-icon">🔧</span><span class="service-name">Blouse Alteration</span></div>
+      <div class="service-card"><span class="service-icon">✂️</span><span class="service-name">Sleeve Alteration</span></div>
+    </div>
+  </div>
 
-<div class="border border-gray-800 p-8 rounded-xl">
-<h3 class="text-2xl mb-4">Structural Inspection</h3>
-<ul class="text-gray-400 space-y-2 text-sm">
-<li>Major wall cracks</li>
-<li>Column cracks</li>
-<li>Beam cracks</li>
-<li>Slab damage</li>
-<li>Floor slope level</li>
-<li>Ceiling cracks</li>
-<li>Balcony slab condition</li>
-<li>Structural settlement signs</li>
-<li>Plaster hollow areas</li>
-<li>Load bearing wall condition</li>
-</ul>
-</div>
+  <!-- SUITS -->
+  <div class="service-panel" id="panel-suits">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🌸</span><span class="service-name">Chudidar Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🌼</span><span class="service-name">Punjabi Suit Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🪷</span><span class="service-name">Salwar Suit Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🎀</span><span class="service-name">Patiala Suit Stitching</span></div>
+      <div class="service-card"><span class="service-icon">👘</span><span class="service-name">Kurti Stitching</span></div>
+      <div class="service-card"><span class="service-icon">👖</span><span class="service-name">Palazzo Suit Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🌺</span><span class="service-name">Anarkali Stitching</span><span class="service-badge">Popular</span></div>
+      <div class="service-card"><span class="service-icon">📐</span><span class="service-name">Straight Cut Dress</span></div>
+      
+      <div class="service-card"><span class="service-icon">👗</span><span class="service-name">One Piece Dress</span></div>
+      <div class="service-card"><span class="service-icon">🎭</span><span class="service-name">Western Gown</span></div>
+    </div>
+  </div>
 
-<!-- Waterproofing -->
+  <!-- KIDS -->
+  <div class="service-panel" id="panel-kids">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🧸</span><span class="service-name">Kids Frock Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🎉</span><span class="service-name">Party Wear Frock</span></div>
+      <div class="service-card"><span class="service-icon">🎂</span><span class="service-name">Layer Frock</span></div>
+      <div class="service-card"><span class="service-icon">👑</span><span class="service-name">Princess Frock</span><span class="service-badge">Loved!</span></div>
+      <div class="service-card"><span class="service-icon">🌟</span><span class="service-name">Kids Party Dress</span></div>
+      <div class="service-card"><span class="service-icon">🏫</span><span class="service-name">School Uniform Stitching</span></div>
+      <div class="service-card"><span class="service-icon">🎭</span><span class="service-name">Fancy Dress Stitching</span></div>
+      <div class="service-card"><span class="service-icon">💫</span><span class="service-name">Kids Lehenga</span></div>
+    </div>
+  </div>
 
-<div class="border border-gray-800 p-8 rounded-xl">
-<h3 class="text-2xl mb-4">Waterproofing & Leakage</h3>
-<ul class="text-gray-400 space-y-2 text-sm">
-<li>Terrace waterproofing condition</li>
-<li>Bathroom leakage signs</li>
-<li>Kitchen sink leakage</li>
-<li>Damp wall detection</li>
-<li>Window water seepage</li>
-<li>Balcony waterproofing</li>
-<li>Pipe leakage</li>
-<li>Ceiling damp patches</li>
-<li>Plumbing joints leakage</li>
-<li>External wall seepage</li>
-</ul>
-</div>
+  <!-- BRIDAL -->
+  <div class="service-panel" id="panel-bridal">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🌸</span><span class="service-name">Petticoat Stitching</span></div>
+      <div class="service-card"><span class="service-icon">✨</span><span class="service-name">Satin Petticoat</span></div>
+      <div class="service-card"><span class="service-icon">🧜</span><span class="service-name">Mermaid Petticoat</span></div>
+      <div class="service-card"><span class="service-icon">💍</span><span class="service-name">Bridal Petticoat</span></div>
+      <div class="service-card"><span class="service-icon">💒</span><span class="service-name">Bridal Wear Stitching</span><span class="service-badge">Premium</span></div>
+      <div class="service-card"><span class="service-icon">🌹</span><span class="service-name">Lehenga Blouse</span></div>
+      <div class="service-card"><span class="service-icon">💐</span><span class="service-name">Wedding Dress Stitching</span><span class="service-badge">Specialty</span></div>
+      <div class="service-card"><span class="service-icon">🥂</span><span class="service-name">Reception Wear Stitching</span></div>
+    </div>
+  </div>
 
-<!-- Plumbing -->
+  <!-- EMBROIDERY -->
+  <div class="service-panel" id="panel-embroidery">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🎨</span><span class="service-name">Fashion Designing</span></div>
+      <div class="service-card"><span class="service-icon">🛍</span><span class="service-name">Boutique Work</span></div>
+      <div class="service-card"><span class="service-icon">✏️</span><span class="service-name">Custom Dress Designing</span></div>
+      <div class="service-card"><span class="service-icon">⭐</span><span class="service-name">Celebrity Style Designs</span><span class="service-badge">Exclusive</span></div>
+      <div class="service-card"><span class="service-icon">🪡</span><span class="service-name">Maggam Work</span></div>
+      <div class="service-card"><span class="service-icon">💎</span><span class="service-name">Stone Work</span></div>
+      <div class="service-card"><span class="service-icon">🔮</span><span class="service-name">Pearl Work</span></div>
+      <div class="service-card"><span class="service-icon">🪞</span><span class="service-name">Mirror Work</span></div>
+      <div class="service-card"><span class="service-icon">🎀</span><span class="service-name">Lace Work</span></div>
+      <div class="service-card"><span class="service-icon">🌺</span><span class="service-name">Embroidery Work</span></div>
+      <div class="service-card"><span class="service-icon">🧩</span><span class="service-name">Patch Work</span></div>
+    </div>
+  </div>
 
-<div class="border border-gray-800 p-8 rounded-xl">
-<h3 class="text-2xl mb-4">Plumbing System</h3>
-<ul class="text-gray-400 space-y-2 text-sm">
-<li>Water pressure check</li>
-<li>Pipe leakage check</li>
-<li>Drainage slope</li>
-<li>Bathroom drain flow</li>
-<li>Kitchen drainage</li>
-<li>Toilet flush system</li>
-<li>Pipe corrosion signs</li>
-<li>Water tank connection</li>
-<li>Tap fittings condition</li>
-<li>Sewer smell detection</li>
-</ul>
-</div>
+  <!-- ALTERATIONS -->
+  <div class="service-panel" id="panel-alterations">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">🧵</span><span class="service-name">Cloth Repair</span></div>
+      <div class="service-card"><span class="service-icon">🔘</span><span class="service-name">Button Fixing</span></div>
+      <div class="service-card"><span class="service-icon">🔁</span><span class="service-name">Elastic Changing</span></div>
+      <div class="service-card"><span class="service-icon">🛠</span><span class="service-name">Tear Repair</span></div>
+      <div class="service-card"><span class="service-icon">✂️</span><span class="service-name">Stitch Repair</span></div>
+      <div class="service-card"><span class="service-icon">🤐</span><span class="service-name">Zip Replacement</span></div>
+      <div class="service-card"><span class="service-icon">🪝</span><span class="service-name">Hook Replacement</span></div>
+      <div class="service-card"><span class="service-icon">👗</span><span class="service-name">Neck Alteration</span></div>
+    </div>
+  </div>
 
-<!-- Electrical -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-<h3 class="text-2xl mb-4">Electrical System</h3>
-<ul class="text-gray-400 space-y-2 text-sm">
-<li>Main electrical panel</li>
-<li>Circuit breaker condition</li>
-<li>Earthing check</li>
-<li>Switchboard condition</li>
-<li>Socket safety</li>
-<li>Wiring exposure</li>
-<li>Voltage testing</li>
-<li>Lighting fixtures condition</li>
-<li>AC power point wiring</li>
-<li>Electrical load safety</li>
-</ul>
-</div>
-
-<!-- Interior -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-<h3 class="text-2xl mb-4">Interior Finishing</h3>
-<ul class="text-gray-400 space-y-2 text-sm">
-<li>Tile hollow sound</li>
-<li>Tile alignment</li>
-<li>Door alignment</li>
-<li>Window sealing</li>
-<li>Paint quality</li>
-<li>Wall finishing</li>
-<li>Skirting finishing</li>
-<li>False ceiling condition</li>
-<li>Cabinet installation quality</li>
-<li>Floor finishing defects</li>
-</ul>
-</div>
-
-<!-- Safety -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-<h3 class="text-2xl mb-4">Safety & Utility</h3>
-<ul class="text-gray-400 space-y-2 text-sm">
-<li>Balcony railing safety</li>
-<li>Fire safety provision</li>
-<li>Ventilation check</li>
-<li>Natural lighting</li>
-<li>Gas pipeline safety</li>
-<li>Lift access safety</li>
-<li>Staircase condition</li>
-<li>Water supply availability</li>
-<li>Parking area condition</li>
-<li>Overall property risk rating</li>
-</ul>
-</div>
-
-</div>
-
+  <!-- SPECIAL -->
+  <div class="service-panel" id="panel-special">
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">⚡</span><span class="service-name">Urgent Stitching</span><span class="service-badge">Express</span></div>
+      <div class="service-card"><span class="service-icon">🏠</span><span class="service-name">Home Pickup & Delivery</span></div>
+      <div class="service-card"><span class="service-icon">📏</span><span class="service-name">Measurement Service</span></div>
+      <div class="service-card"><span class="service-icon">🎨</span><span class="service-name">Custom Orders</span></div>
+      <div class="service-card"><span class="service-icon">📦</span><span class="service-name">Bulk Stitching Orders</span></div>
+    </div>
+  </div>
 </section>
 
-
-<!-- BLOGS -->
-
-<section id="blogs" class="py-32">
-
-<h2 class="text-center text-4xl font-bold mb-20">
-Home Inspection Blog
-</h2>
-
-<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-
-<!-- Blog 1 -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-
-<h3 class="text-2xl mb-4">
-Flat Inspection Before Buying
-</h3>
-
-<p class="text-gray-400 mb-6">
-Buying a flat without proper inspection can hide defects like water leakage,
-structural cracks and plumbing problems. A professional inspection helps
-detect these issues before purchase.
-</p>
-
-<a href="#" class="text-sm text-gray-500">
-Read More →
-</a>
-
-</div>
-
-<!-- Blog 2 -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-
-<h3 class="text-2xl mb-4">
-Hidden Defects In New Apartments
-</h3>
-
-<p class="text-gray-400 mb-6">
-Many newly constructed flats have hidden issues like damp walls,
-tile hollowness and electrical faults that are difficult to see during
-normal property visits.
-</p>
-
-<a href="#" class="text-sm text-gray-500">
-Read More →
-</a>
-
-</div>
-
-<!-- Blog 3 -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-
-<h3 class="text-2xl mb-4">
-Moisture Problems In Flats
-</h3>
-
-<p class="text-gray-400 mb-6">
-Moisture problems can damage paint, plaster and electrical systems.
-Using a moisture meter helps identify hidden dampness behind walls.
-</p>
-
-<a href="#" class="text-sm text-gray-500">
-Read More →
-</a>
-
-</div>
-
-</div>
-
+<!-- SPECIALTIES -->
+<section style="background:#FBF6EF; padding:5rem 5vw;">
+  <div style="text-align:center; margin-bottom:3rem;">
+    <div class="section-tag" style="justify-content:center;">Why Choose Us</div>
+    <h2 class="section-title reveal">Our Core <em>Specialties</em></h2>
+  </div>
+  <div class="specialty-row">
+    <div class="specialty-card reveal">
+      <div class="specialty-icon">🥻</div>
+      <h3>Saree Expertise</h3>
+      <p>From delicate pico edging to intricate tassel work — every saree service handled with care and precision.</p>
+      <div class="specialty-count">5 Saree Services</div>
+    </div>
+    <div class="specialty-card reveal reveal-delay-1">
+      <div class="specialty-icon">💍</div>
+      <h3>Bridal Boutique</h3>
+      <p>Breathtaking bridal blouses, lehengas, and wedding wear crafted with premium fabric and timeless elegance.</p>
+      <div class="specialty-count">8+ Bridal Services</div>
+    </div>
+    <div class="specialty-card reveal reveal-delay-2">
+      <div class="specialty-icon">🎀</div>
+      <h3>Kids Fashion</h3>
+      <p>Adorable frocks, party dresses, uniforms and fancy costumes — making your little ones shine bright.</p>
+      <div class="specialty-count">8 Kids Services</div>
+    </div>
+  </div>
 </section>
 
-
-<!-- RATINGS -->
-
-<section id="ratings" class="py-32">
-
-<h2 class="text-center text-4xl font-bold mb-20">
-Client Ratings & Reviews
-</h2>
-
-<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-
-<!-- Review 1 -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-
-<p class="text-gray-400 mb-6">
-AxisDesigns detected hidden leakage behind the bathroom wall before
-we purchased the flat. This saved us from costly repairs.
-</p>
-
-<div class="font-semibold">
-Rahul Sharma
-</div>
-
-<div class="text-sm text-gray-500">
-Wakad, Pune
-</div>
-
-<div class="mt-3 text-yellow-400">
-★★★★★
-</div>
-
-</div>
-
-
-<!-- Review 2 -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-
-<p class="text-gray-400 mb-6">
-Very detailed inspection. They checked plumbing pressure, hollow tiles
-and electrical safety in our apartment.
-</p>
-
-<div class="font-semibold">
-Sneha Patil
-</div>
-
-<div class="text-sm text-gray-500">
-Baner, Pune
-</div>
-
-<div class="mt-3 text-yellow-400">
-★★★★★
-</div>
-
-</div>
-
-
-<!-- Review 3 -->
-
-<div class="border border-gray-800 p-8 rounded-xl">
-
-<p class="text-gray-400 mb-6">
-The inspection report was very professional and helped us negotiate
-repairs with the builder.
-</p>
-
-<div class="font-semibold">
-Amit Kulkarni
-</div>
-
-<div class="text-sm text-gray-500">
-Hinjewadi, Pune
-</div>
-
-<div class="mt-3 text-yellow-400">
-★★★★★
-</div>
-
-</div>
-
-</div>
-
+<!-- WHY US -->
+<section id="why">
+  <div style="text-align:center; margin-bottom:0;">
+    <div class="section-tag" style="justify-content:center;">Our Promises</div>
+    <h2 class="section-title reveal">The Axis Design <em>Difference</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon-wrap">📐</div>
+      <h3>Perfect Fit</h3>
+      <p>Detailed measurements & personal consultation to ensure every garment fits flawlessly.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon-wrap">⏰</div>
+      <h3>On-Time Delivery</h3>
+      <p>We respect your time. Work is delivered on promised date, every single time.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon-wrap">✨</div>
+      <h3>Premium Quality</h3>
+      <p>Finest stitching techniques, quality threads, and professional finishing on every order.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-icon-wrap">🏠</div>
+      <h3>Home Service</h3>
+      <p>Free home pickup & delivery for orders within Nanded City. Convenience at your doorstep.</p>
+    </div>
+  </div>
 </section>
 
+<!-- PROCESS -->
+<section id="process">
+  <div style="text-align:center;">
+    <div class="section-tag" style="justify-content:center;">How It Works</div>
+    <h2 class="section-title reveal">Our <em>Simple Process</em></h2>
+    <p class="section-desc reveal" style="margin: 0.5rem auto 0; text-align:center;">From first contact to final fitting — a seamless experience crafted for you</p>
+  </div>
+  <div class="process-steps reveal">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Contact Us</div>
+      <div class="step-desc">Call, WhatsApp, or visit our Nanded City boutique</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Consultation</div>
+      <div class="step-desc">Choose design, fabric & discuss your requirements</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Measurement</div>
+      <div class="step-desc">Precise measurements for a perfect, flattering fit</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">Crafting</div>
+      <div class="step-desc">Expert stitching with careful attention to every detail</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-title">Delivery</div>
+      <div class="step-desc">On-time delivery or free home drop within Nanded City</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="text-align:center; margin-bottom:0;">
+    <div class="section-tag" style="justify-content:center;">Client Love</div>
+    <h2 class="section-title reveal">What Our <em>Clients Say</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">My bridal blouse was absolutely stunning! The Maggam work was intricate and exactly what I had in mind. The Axis Design made my wedding day extra special.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">PR</div>
+        <div>
+          <div class="testi-name">Priya Rao</div>
+          <div class="testi-loc">Nanded City</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Best Anarkali stitching I've ever had. The fit was perfect and they delivered two days early! My daughter's princess frock was the hit of the party.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SM</div>
+        <div>
+          <div class="testi-name">Sunita Mehta</div>
+          <div class="testi-loc">Nanded City</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The home pickup service is so convenient. They stitched 5 school uniforms for my kids and the quality was excellent. Will always come back to The Axis Design!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AK</div>
+        <div>
+          <div class="testi-name">Anjali Kulkarni</div>
+          <div class="testi-loc">Nanded City</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
+<section id="contact">
+  <div style="text-align:center;">
+    <div class="section-tag" style="justify-content:center;">Get In Touch</div>
+    <h2 class="section-title reveal">Book Your <em>Appointment</em></h2>
+  </div>
 
-<section id="contact" class="py-32">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <p>Visit us at our Nanded City boutique or let us come to you with our home pickup service. We'd love to help you create something beautiful.</p>
 
-<h2 class="text-center text-4xl font-bold mb-16">
-Contact AxisDesigns
-</h2>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text">
+          <h4>Location</h4>
+          <p>Nanded City, Pune,<br>Maharashtra, India</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-text">
+          <h4>Phone / WhatsApp</h4>
+          <p>+91 8010816026</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">⏰</div>
+        <div class="contact-item-text">
+          <h4>Working Hours</h4>
+          <p>Mon – Sun: 9 AM – 8 PM<br></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">🚗</div>
+        <div class="contact-item-text">
+          <h4>Home Pickup</h4>
+          <p>Free pickup & delivery<br>within Nanded City</p>
+        </div>
+      </div>
+    </div>
 
-<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6">
-
-<!-- Contact Info -->
-
-<div class="space-y-6">
-
-<h3 class="text-2xl font-semibold">Book Home Inspection</h3>
-
-<p class="text-gray-400">
-Schedule a professional home inspection before buying a flat or apartment in Pune. 
-Our inspection detects hidden defects like leakage, structural cracks, plumbing problems and electrical issues.
-</p>
-
-<div class="space-y-3 text-gray-300">
-
-<p>📞 Phone: +91 8605810586</p>
-<p>📧 Email: theaxisdesigns01@email.com</p>
-<p>📍 Location: Pune, Maharashtra</p>
-
-</div>
-
-<div class="flex gap-4 mt-6">
-
-<a href="tel:+918605810586" class="bg-white text-black px-6 py-3 rounded-lg">
-Call Now
-</a>
-
-<a href="https://wa.me/918605810586" target="_blank" class="border border-gray-700 px-6 py-3 rounded-lg">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-<!-- Contact Form -->
-
-<form action="https://formsubmit.co/your-email@gmail.com" method="POST" class="space-y-5">
-
-<input 
-type="text" 
-name="name"
-placeholder="Full Name"
-class="w-full p-3 rounded bg-gray-900 border border-gray-700"
-required
->
-
-<input 
-type="tel" 
-name="mobile"
-placeholder="Mobile Number"
-class="w-full p-3 rounded bg-gray-900 border border-gray-700"
-required
->
-
-<input 
-type="text" 
-name="location"
-placeholder="Location / Area"
-class="w-full p-3 rounded bg-gray-900 border border-gray-700"
-required
->
-
-<textarea 
-name="message"
-placeholder="Message"
-rows="4"
-class="w-full p-3 rounded bg-gray-900 border border-gray-700"
-required
-></textarea>
-
-<!-- Hidden settings -->
-
-<input type="hidden" name="_captcha" value="false">
-
-<input type="hidden" name="_subject" value="New Home Inspection Request">
-
-<input type="hidden" name="_template" value="table">
-
-<button 
-type="submit"
-class="bg-white text-black px-6 py-3 rounded-lg w-full">
-Send Inspection Request
-</button>
-
-</form>
-
-</div>
-
+    <div class="contact-form reveal reveal-delay-1">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 8010816026>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service Required</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Saree Pico / Fall / Rolling</option>
+          <option>Blouse Stitching</option>
+          <option>Designer / Bridal Blouse</option>
+          <option>Kurti / Salwar Suit</option>
+          <option>Kids Frock / Party Dress</option>
+          <option>Bridal / Wedding Wear</option>
+          <option>Embroidery / Embellishments</option>
+          <option>Alterations & Repairs</option>
+          <option>Urgent Stitching</option>
+          <option>Custom Design</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Date</label>
+        <input type="date">
+      </div>
+      <div class="form-group">
+        <label>Your Message / Requirements</label>
+        <textarea placeholder="Describe your requirements, design preferences, occasion..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)">
+        Send Message ✦
+      </button>
+    </div>
+  </div>
 </section>
-<!-- LIBRARIES -->
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">ThrAxis<span>Designs</span></span>
+  <p class="footer-tagline">Ladies & Kids Tailor — Nanded City, Pune</p>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">© 2025 The Axis Design. All rights reserved. | Nanded City, Pune, Maharashtra</p>
+</footer>
 
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/918010816026" target="_blank" title="Chat on WhatsApp">
+  <span class="wa-icon">💬</span>
+</a>
 
 <script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-/* THREE JS DONUT BACKGROUND */
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    cursor.style.left = mouseX - 5 + 'px';
+    cursor.style.top = mouseY - 5 + 'px';
+  });
 
-const scene = new THREE.Scene()
+  function animRing() {
+    ringX += (mouseX - ringX - 17) * 0.12;
+    ringY += (mouseY - ringY - 17) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
 
-const camera = new THREE.PerspectiveCamera(
-75,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
-)
+  document.querySelectorAll('a, button, .service-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width = '50px';
+      ring.style.height = '50px';
+      ring.style.opacity = '0.4';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.width = '34px';
+      ring.style.height = '34px';
+      ring.style.opacity = '0.7';
+    });
+  });
 
-const renderer = new THREE.WebGLRenderer({
-canvas:document.querySelector('#bg'),
-alpha:true
-})
+  // Navbar scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
 
-renderer.setSize(window.innerWidth,window.innerHeight)
+  // Tab switching
+  function showTab(id) {
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    event.target.classList.add('active');
+    // Re-animate cards
+    document.querySelectorAll('#panel-' + id + ' .service-card').forEach((c, i) => {
+      c.style.animation = 'none';
+      setTimeout(() => { c.style.animation = `cardIn 0.3s ease ${i * 0.04}s both`; }, 10);
+    });
+  }
 
-camera.position.z = 30
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => obs.observe(r));
 
-const geometry = new THREE.TorusGeometry(10,3,16,100)
+  // Counter animation for stats
+  function animCount(el, target, suffix = '') {
+    let start = 0;
+    const dur = 2000;
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / dur, 1);
+      el.textContent = Math.floor(progress * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
 
-const material = new THREE.MeshStandardMaterial({
-color:0xffffff,
-wireframe:true
-})
+  const heroObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll('.stat-num').forEach(el => {
+        const text = el.textContent;
+        const num = parseInt(text);
+        const suf = text.replace(/[0-9]/g, '');
+        animCount(el, num, suf);
+      });
+      heroObserver.disconnect();
+    }
+  }, { threshold: 0.5 });
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) heroObserver.observe(statsEl);
 
-const torus = new THREE.Mesh(geometry,material)
+  // Form submit
+  function handleSubmit(btn) {
+    const orig = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '✓ Message Sent! We\'ll call you shortly.';
+      btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 4000);
+    }, 1500);
+  }
 
-scene.add(torus)
-
-const light = new THREE.PointLight(0xffffff)
-
-light.position.set(20,20,20)
-
-scene.add(light)
-
-function animate(){
-
-requestAnimationFrame(animate)
-
-torus.rotation.x += 0.01
-torus.rotation.y += 0.01
-
-renderer.render(scene,camera)
-
-}
-
-animate()
-
-
-/* SWIPER */
-
-new Swiper(".mySwiper",{
-
-loop:true,
-autoplay:{delay:3000}
-
-})
-
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 </script>
-
 </body>
 </html>
-
